@@ -33,10 +33,10 @@ const Navbar = () => {
               </div>
             </div>
             <div className="pr-1 flex gap-4">
-              <button className="text-white items-center flex gap-1 text-sm font-semi py-[7px] px-4 rounded-md bg-neutral-900">
+              <button className="text-white items-center flex gap-1 text-sm font-semi py-[4px] px-4 rounded bg-neutral-900">
                 Login
               </button>
-              <button className="text-black items-center flex gap-1 text-sm font-semi py-[7px] px-2 rounded-md bg-white">
+              <button className="text-black items-center flex gap-1 text-sm font-semi py-[4px] px-2 rounded bg-white">
                 Get Started 
               </button>
             </div>
