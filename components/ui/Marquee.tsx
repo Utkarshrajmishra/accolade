@@ -6,17 +6,17 @@ import { PiPaypalLogo } from "react-icons/pi";
 import { SiAdobe, SiIntuit } from "react-icons/si";
 
 const comapines = [
-  { id: 1, logo: <BsGoogle fontSize={50} /> },
-  { id: 2, logo: <BsMicrosoft fontSize={50} /> },
-  { id: 3, logo: <BsAmazon fontSize={50} /> },
-  { id: 4, logo: <PiPaypalLogo fontSize={50} /> },
-  { id: 5, logo: <SiAdobe fontSize={50} /> },
-  { id: 6, logo: <BsFacebook fontSize={50} /> },
-  { id: 7, logo: <FaAws fontSize={50} /> },
-  { id: 8, logo: <FaLinkedin fontSize={50} /> },
-  { id: 9, logo: <SiIntuit fontSize={50} /> },
-  { id: 10, logo: <FaSalesforce fontSize={50} /> },
-  { id: 11, logo: <FaSpotify fontSize={50} /> },
+  { id: 1, logo: <BsGoogle fontSize={30} /> },
+  { id: 2, logo: <BsMicrosoft fontSize={30} /> },
+  { id: 3, logo: <BsAmazon fontSize={30} /> },
+  { id: 4, logo: <PiPaypalLogo fontSize={23} /> },
+  { id: 5, logo: <SiAdobe fontSize={30} /> },
+  { id: 6, logo: <BsFacebook fontSize={30} /> },
+  { id: 7, logo: <FaAws fontSize={30} /> },
+  { id: 8, logo: <FaLinkedin fontSize={30} /> },
+  { id: 9, logo: <SiIntuit fontSize={30} /> },
+  { id: 10, logo: <FaSalesforce fontSize={30} /> },
+  { id: 11, logo: <FaSpotify fontSize={30} /> },
 ];
 
 export function MarqueeComp() {

@@ -2,16 +2,16 @@ import Wrapper from "@/components/global/Wrapper";
 import { Spotlight } from "@/components/ui/Spotlight";
 import {ArrowRightIcon } from "lucide-react";
 import { MarqueeComp } from "@/components/ui/Marquee";
-
-export default function Home() {
+import { auth, signIn } from "@/auth";
+export default async function Home() {
   return (
     <>
       {" "}
       <main
         id="background"
-        className="flex-none min-h-screen overflow-y-hidden -z-10"
+        className="flex-none h-screen overflow-y-hidden -z-10"
       >
-        <Wrapper className="relative  h-screen flex-col gap-6 flex justify-center  items-center">
+        <Wrapper className="relative   h-screen flex-col gap-6 mt-6 flex justify-center  items-center">
           <Spotlight
             className="-top-40 left-0 md:-left-20 md:-top-0"
             fill="rgba(255, 255, 255, 0.5)"
@@ -41,19 +41,15 @@ export default function Home() {
               recruiters, and land more interviews—effortlessly!
             </p>
           </div>
-          <div className="flex gap-4 mt-6">
-            <button className="bg-white text-black py-[6px] px-4 rounded">
+          <form  className="flex gap-4 my-4">
+            <button  className="bg-white text-black py-[6px] px-4 rounded">
               Start for free
             </button>
             <button className="py-[6px] px-4 rounded border border-[rgba(124,124,124,0.2)]">
               How it works
             </button>
-          </div>
-        </Wrapper>
-        <Wrapper className="flex gap-12 flex-col items-center mt-16">
-          <p className="text-xl text-zinc-300">Get placed in the top companies</p>
-             
-              <MarqueeComp />
+          </form>
+          <MarqueeComp />
         </Wrapper>
       </main>
     </>

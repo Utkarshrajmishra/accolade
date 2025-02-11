@@ -1,8 +1,10 @@
 import Link from "next/link";
 import Wrapper from "./global/Wrapper";
 import Icons from "./global/Icons";
-import { ArrowRight, User } from "lucide-react";
-const Navbar = () => {
+import { auth, signIn } from "@/auth";
+
+const Navbar = async() => {
+  const session=await auth()
   return (
     <nav className="relative w-full h-fulll ">
       <div className="z-[99] fixed pointer-events-none inset-x-0 h-[88px]  backdrop-blur-sm [mask:linear-gradient(to_bottom,#000_20%,transparent_calc(100%-20%))]"></div>
@@ -32,13 +34,33 @@ const Navbar = () => {
                 </p>
               </div>
             </div>
-            <div className="pr-1 flex gap-4">
-              <button className="text-white items-center flex gap-1 text-sm font-semi py-[4px] px-4 rounded bg-neutral-900">
-                Login
-              </button>
+            <div className="flex gap-3">
               <button className="text-black items-center flex gap-1 text-sm font-semi py-[4px] px-2 rounded bg-white">
-                Get Started 
+                Get Started
               </button>
+              {session && session?.user ? (
+                <div className="flex gap-3">
+                  <img
+                    src={session.user.image}
+                    className="h-7 w-7 rounded-full"
+                  />
+                </div>
+              ) : (
+                <form
+                  action={async () => {
+                    "use server";
+                    await signIn("google");
+                  }}
+                  className="pr-1 flex gap-4"
+                >
+                  <button
+                    type="submit"
+                    className="text-white items-center flex gap-1 text-sm font-semi py-[4px] px-4 rounded bg-neutral-900"
+                  >
+                    Login
+                  </button>
+                </form>
+              )}
             </div>
           </div>
         </Wrapper>
