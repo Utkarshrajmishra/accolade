@@ -55,7 +55,8 @@ export default {
   			ping: 'ping 1s cubic-bezier(0, 0, 0.2, 1) infinite',
   			spotlight: 'spotlight 2s ease .75s 1 forwards',
   			marquee: 'marquee var(--duration) infinite linear',
-  			'marquee-vertical': 'marquee-vertical var(--duration) linear infinite'
+  			'marquee-vertical': 'marquee-vertical var(--duration) linear infinite',
+  			meteor: 'meteor 5s linear infinite'
   		},
   		keyframes: {
   			spotlight: {
@@ -88,6 +89,19 @@ export default {
   				},
   				to: {
   					transform: 'translateY(calc(-100% - var(--gap)))'
+  				}
+  			},
+  			meteor: {
+  				'0%': {
+  					transform: 'rotate(var(--angle)) translateX(0)',
+  					opacity: '1'
+  				},
+  				'70%': {
+  					opacity: '1'
+  				},
+  				'100%': {
+  					transform: 'rotate(var(--angle)) translateX(-500px)',
+  					opacity: '0'
   				}
   			}
   		},

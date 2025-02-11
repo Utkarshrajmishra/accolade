@@ -2,7 +2,6 @@ import Wrapper from "@/components/global/Wrapper";
 import { Spotlight } from "@/components/ui/Spotlight";
 import {ArrowRightIcon } from "lucide-react";
 import { MarqueeComp } from "@/components/ui/Marquee";
-import { auth, signIn } from "@/auth";
 export default async function Home() {
   return (
     <>
@@ -11,6 +10,8 @@ export default async function Home() {
         id="background"
         className="flex-none h-screen overflow-y-hidden -z-10"
       >
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(23,23,23,0.4)_1px,transparent_1px),linear-gradient(to_bottom,rgba(23,23,23,0.4)_1px,transparent_1px)] bg-[size:3rem_3rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_110%)] h-full z-[-10]0" />
+
         <Wrapper className="relative   h-screen flex-col gap-6 mt-6 flex justify-center  items-center">
           <Spotlight
             className="-top-40 left-0 md:-left-20 md:-top-0"
@@ -41,8 +42,8 @@ export default async function Home() {
               recruiters, and land more interviews—effortlessly!
             </p>
           </div>
-          <form  className="flex gap-4 my-4">
-            <button  className="bg-white text-black py-[6px] px-4 rounded">
+          <form className="flex gap-4 my-4">
+            <button className="bg-white text-black py-[6px] px-4 rounded">
               Start for free
             </button>
             <button className="py-[6px] px-4 rounded border border-[rgba(124,124,124,0.2)]">

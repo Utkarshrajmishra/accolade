@@ -2,6 +2,7 @@ import Link from "next/link";
 import Wrapper from "./global/Wrapper";
 import Icons from "./global/Icons";
 import { auth, signIn } from "@/auth";
+import { Menu } from "lucide-react";
 
 const Navbar = async() => {
   const session=await auth()
@@ -35,14 +36,15 @@ const Navbar = async() => {
               </div>
             </div>
             <div className="flex gap-3">
-              <button className="text-black items-center flex gap-1 text-sm font-semi py-[4px] px-2 rounded bg-white">
+              <button className="hidden md:flex text-black items-center  gap-1 text-sm font-semi py-[4px] px-2 rounded bg-white">
                 Get Started
               </button>
+              <div className="inline-block md:hidden"><Menu/></div>
               {session && session?.user ? (
                 <div className="flex gap-3">
                   <img
                     src={session.user.image}
-                    className="h-7 w-7 rounded-full"
+                    className="h-7 w-7 cursor-pointer border bordeer-white rounded-full"
                   />
                 </div>
               ) : (
