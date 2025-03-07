@@ -1,5 +1,5 @@
 import Sidebar from "./@sidebar/page";
-
+import Header from "./@header/page";
 export default function DashboardLayout({
   children,
 }: {
@@ -8,7 +8,10 @@ export default function DashboardLayout({
   return (
     <div className="flex">
       <Sidebar />
-      <div className="flex-1">{children}</div>
+      <div className="flex-1">
+        <Header />
+        {children}
+      </div>
     </div>
   );
 }
