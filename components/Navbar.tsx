@@ -3,7 +3,6 @@ import Wrapper from "./global/Wrapper";
 import Icons from "./global/Icons";
 import { auth, signIn } from "@/auth";
 import { Menu } from "lucide-react";
-import { Drawer } from "./Drawer";
 
 const Navbar = async () => {
   const session = await auth();

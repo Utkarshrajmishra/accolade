@@ -1,5 +1,6 @@
 import Sidebar from "./@sidebar/page";
 import Header from "./@header/page";
+import { Providers } from "@/components/SessionProvider";
 export default function DashboardLayout({
   children,
 }: {
@@ -7,9 +8,13 @@ export default function DashboardLayout({
 }) {
   return (
     <div className="flex">
-      <Sidebar />
+      <Providers>
+        <Sidebar />
+      </Providers>
       <div className="flex-1">
-        <Header />
+        <Providers>
+          <Header />
+        </Providers>
         {children}
       </div>
     </div>

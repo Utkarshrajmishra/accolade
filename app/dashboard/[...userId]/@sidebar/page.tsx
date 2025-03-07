@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
+import Profile from "@/components/Profile";
 
 const Menu = [
   {
@@ -83,17 +84,7 @@ const Sidebar = () => {
       {/* Top Section */}
       <div className="flex-none px-4 py-2">
         {/* Workspace Selector */}
-        <section className="w-full bg-zinc-900/30 hover:bg-zinc-800/50 transition-all duration-200 border border-zinc-800/30 rounded-lg p-2.5 flex items-center justify-between group">
-          <div className="flex items-center gap-2">
-            {/* <div className="size-5 rounded bg-indigo-600 flex items-center justify-center">
-              <span className="text-xs font-medium text-white">U</span>
-            </div> */}
-            <span className="text-[0.84rem] text-zinc-300 group-hover:text-white">
-              Utkarsh&apos;s Workspace
-            </span>
-          </div>
-          <ChevronDown className="size-4 text-zinc-500 group-hover:text-zinc-400" />
-        </section>
+        <Profile/>
       </div>
       <div className="border-t border-neutral-800" />
       <div className="flex-none mt-2 px-4 space-y-6">
