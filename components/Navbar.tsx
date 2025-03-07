@@ -3,9 +3,10 @@ import Wrapper from "./global/Wrapper";
 import Icons from "./global/Icons";
 import { auth, signIn } from "@/auth";
 import { Menu } from "lucide-react";
+import { Drawer } from "./Drawer";
 
-const Navbar = async() => {
-  const session=await auth()
+const Navbar = async () => {
+  const session = await auth();
   return (
     <nav className="relative w-full h-fulll ">
       <div className="z-[99] fixed pointer-events-none inset-x-0 h-[88px]  backdrop-blur-sm [mask:linear-gradient(to_bottom,#000_20%,transparent_calc(100%-20%))]"></div>
@@ -36,14 +37,14 @@ const Navbar = async() => {
               </div>
             </div>
             <div className="flex gap-3">
-              <button className="hidden md:flex text-black items-center  gap-1 text-sm font-semi py-[4px] px-2 rounded bg-white">
-                Get Started
-              </button>
-              <div className="inline-block md:hidden"><Menu/></div>
+              <Drawer />
+              <div className="inline-block md:hidden">
+                <Menu />
+              </div>
               {session && session?.user ? (
                 <div className="flex gap-3">
                   <img
-                    src={session.user.image}
+                    src={session.user.image || "./next.svg"}
                     className="h-7 w-7 cursor-pointer border bordeer-white rounded-full"
                   />
                 </div>

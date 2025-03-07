@@ -1,7 +1,7 @@
 import Wrapper from "@/components/global/Wrapper";
 import { Spotlight } from "@/components/ui/Spotlight";
-import {ArrowRightIcon } from "lucide-react";
-import { MarqueeComp } from "@/components/ui/Marquee";
+import { ArrowRightIcon } from "lucide-react";
+
 export default async function Home() {
   return (
     <>
@@ -50,7 +50,6 @@ export default async function Home() {
               How it works
             </button>
           </form>
-          <MarqueeComp />
         </Wrapper>
       </main>
     </>
