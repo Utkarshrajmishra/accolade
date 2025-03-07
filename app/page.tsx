@@ -5,6 +5,7 @@ import { ArrowRightIcon } from "lucide-react";
 export default async function Home() {
   return (
     <>
+    
       {" "}
       <main
         id="background"
