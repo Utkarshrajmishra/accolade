@@ -36,13 +36,16 @@ const Navbar = async () => {
                 </p>
               </div>
             </div>
-            <div className="flex gap-3">
-              <Drawer />
+            <div className="flex gap-3 items-center">
               <div className="inline-block md:hidden">
                 <Menu />
               </div>
               {session && session?.user ? (
                 <div className="flex gap-3">
+                  <p className="text-zinc-400 lg:flex text-[0.95rem] font-normal">{`Hey, ${session.user.name?.substring(
+                    0,
+                    session.user.name?.indexOf(" ")
+                  )}`}</p>
                   <img
                     src={session.user.image || "./next.svg"}
                     className="h-7 w-7 cursor-pointer border bordeer-white rounded-full"
