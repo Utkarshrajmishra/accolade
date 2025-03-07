@@ -1,3 +1,5 @@
+"use client";
+import { handleForm } from "@/actions/createProject";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -11,8 +13,14 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Plus } from "lucide-react";
+import { useActionState } from "react";
 
 export function Drawer() {
+  const [state, action] = useActionState(handleForm,{
+    name:"",
+    url:"",
+    errors:{name:[], url:[]}
+  });
   return (
     <div className="rounded-xl">
       <Dialog>
@@ -30,7 +38,7 @@ export function Drawer() {
               LinkedIn. Don't forget to double check it.
             </DialogDescription>
           </DialogHeader>
-          <form action="/">
+          <form action={action}>
             <div className="grid gap-4 py-1">
               <div className="flex flex-col items-start gap-1 text-sm">
                 <Label htmlFor="name" className="text-right">
@@ -40,8 +48,11 @@ export function Drawer() {
                   id="name"
                   name="name"
                   placeholder="Project Name"
-                  className="col-span-3 bg-neutral-900 rounded border outline-none  border-neutral-500"
+                  className="col-span-3 bg-neutral-900 rounded border outline-none border-neutral-500"
                 />
+                {state?.errors?.name && (
+                  <p className="text-red-500 text-xs">{state.errors.name}</p>
+                )}
               </div>
               <div className="flex flex-col gap-1 text-sm items-start">
                 <Label htmlFor="url" className="text-right">
@@ -53,6 +64,9 @@ export function Drawer() {
                   placeholder="https://example.com"
                   className="col-span-3 bg-neutral-900 rounded border border-neutral-500"
                 />
+                {state?.errors?.url && (
+                  <p className="text-red-500 text-xs">{state.errors.url}</p>
+                )}
               </div>
             </div>
             <DialogFooter className="mt-2">
