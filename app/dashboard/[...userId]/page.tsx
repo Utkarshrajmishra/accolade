@@ -1,4 +1,6 @@
-import { Search } from "lucide-react";
+import { Drawer } from "@/components/Drawer";
+import { Button } from "@/components/ui/button";
+import { Plus, Search } from "lucide-react";
 
 const DashboarPage = () => {
   return (
@@ -17,6 +19,7 @@ const DashboarPage = () => {
               className="w-[360px] bg-zinc-900/30 border border-zinc-800/30 rounded-lg pl-9 pr-3 py-2 text-sm text-zinc-300 placeholder:text-zinc-500 focus:outline-none focus:ring-1 focus:ring-zinc-700"
             />
           </div>
+          <Drawer/>
         </div>
 
         {/* Scrollable Content */}

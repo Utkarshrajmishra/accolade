@@ -10,6 +10,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { signOut } from "next-auth/react";
 
 const Profile = () => {
   const { data: session } = useSession();
@@ -47,7 +48,9 @@ const Profile = () => {
           </DropdownMenuItem>
           <DropdownMenuSeparator className="bg-neutral-800 h-[1px]" />
           <DropdownMenuItem className="hover:border border-neutral-800 focus:bg-red-500/20 hover:bg-red-500/20 cursor-pointer transition-all">
-            <form className="w-full">
+            <form action={async()=>{
+              await signOut()
+            }} className="w-full">
               <button type="submit" className="flex gap-2 w-full text-red-500">
                 <LogOut className="mr-2 h-4 w-4" />
                 <span>Log out</span>
