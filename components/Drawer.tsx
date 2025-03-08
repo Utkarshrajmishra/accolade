@@ -12,14 +12,15 @@ import {
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Plus } from "lucide-react";
+import { Loader, Plus } from "lucide-react";
 import { useActionState } from "react";
 
-export function Drawer() {
-  const [state, action] = useActionState(handleForm,{
-    name:"",
-    url:"",
-    errors:{name:[], url:[]}
+
+export function Drawer({session}:{session:any}) {
+  const [state, action, isPending] = useActionState(async(prevState:any, formData:any)=>await handleForm(prevState,formData, session), {
+    name: "",
+    url: "",
+    errors: { name: [], url: [] },
   });
   return (
     <div className="rounded-xl">
@@ -71,9 +72,14 @@ export function Drawer() {
             </div>
             <DialogFooter className="mt-2">
               <Button
-                className="bg-emerald-800 hover:bg-emerald-900 rounded items-center"
+                className="flex bg-emerald-800 hover:bg-emerald-900 rounded items-center"
                 type="submit"
               >
+                {isPending && (
+                  <div className="animate-spin">
+                    <Loader />
+                  </div>
+                )}
                 Save changes
               </Button>
             </DialogFooter>

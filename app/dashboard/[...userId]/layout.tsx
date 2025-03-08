@@ -11,7 +11,7 @@ export default function DashboardLayout({
       <Providers>
         <Sidebar />
       </Providers>
-      <div className="flex-1">
+      <div className="flex-1 h-screen overflow-hidden">
         <Providers>
           <Header />
         </Providers>
