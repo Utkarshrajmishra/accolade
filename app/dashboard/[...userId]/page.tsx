@@ -64,7 +64,7 @@ const DashboarPage = async ({
               projects.map((project: any) => (
                 <div
                   key={project.id}
-                  className="h-fit rounded flex flex-col items-between justify-between p-4 bg-neutral-900  w-68 border border-neutral-700"
+                  className="h-fit rounded flex flex-col items-between justify-between p-4 bg-neutral-900 hover:border-zinc-500 w-68 border border-neutral-700"
                 >
                   {/* <BriefcaseBusiness className="size-4" /> */}
                   <div className="">
