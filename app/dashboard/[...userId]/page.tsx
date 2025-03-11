@@ -1,4 +1,5 @@
 import Dashboard from "@/components/dashboard";
+import Project from "@/components/Project";
 const DashboarPage = async ({
   params,
   searchParams,
@@ -10,7 +11,8 @@ const DashboarPage = async ({
   const id = (await params).userId;
   return (
     <>
-      <Dashboard userId={id} />
+      {/* <Dashboard userId={id} /> */}
+      <Project />
     </>
   );
 };
