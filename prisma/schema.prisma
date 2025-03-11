@@ -13,7 +13,6 @@ model User {
   name  String
   email String  @unique
   projects Project[]
-  feedbacks Feedback[]
 }
 
 model Project {
@@ -28,16 +27,14 @@ model Project {
 
 model Feedback {
   id        String   @id @default(cuid())
-  email     String   @unique
+  email     String   
   name      String
   feedback  String
   date      DateTime @default(now())
   projectId String
-  userId    String
+  rating Int
   active    Boolean  @default(true)
   project   Project  @relation(fields: [projectId], references: [id], onDelete: Cascade)
-  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 
-  @@index([userId])
   @@index([projectId])
 }

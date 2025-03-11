@@ -21,12 +21,7 @@ const fetchData = async (userId: string) => {
   }
 };
 
-
-const Dashboard = async ({
-userId
-}: {
-userId:string
-}) => {
+const Dashboard = async ({ userId }: { userId: string }) => {
   const session = await auth();
   const projects = await fetchData(userId);
 
@@ -48,12 +43,16 @@ userId:string
           </div>
           <Drawer session={session} />
         </div>
-
+        <code className="text-sm">
+          {`<my-widget project-id=1122344></my-widget>`}
+          <br />
+          {`<script src="process.env.WIDGET_URL"}/widget.umd.js"><script>`}
+        </code>
         {/* Scrollable Content */}
-        <div className="mt-3 flex-1 overflow-y-auto pb-4">
-          <div className="grid grid-cols-4 gap-2">
-            {projects &&
-              projects.map((project: any) => (
+        {projects.length > 0 ? (
+          <div className="mt-3 flex-1 overflow-y-auto pb-4">
+            <div className="grid grid-cols-4 gap-2">
+              {projects.map((project: any) => (
                 <div
                   key={project.id}
                   className="h-fit rounded flex flex-col items-between justify-between p-4 bg-neutral-900 hover:border-zinc-500 w-68 border border-neutral-700"
@@ -78,8 +77,16 @@ userId:string
                   </div>
                 </div>
               ))}
+            </div>
           </div>
-        </div>
+        ) : (
+          <div className="w-full h-[100%] flex items-center justify-center">
+            <div>
+              <p className="mb-1 text-zinc-300 text-center">No project found</p>
+              <Drawer session={session} />
+            </div>
+          </div>
+        )}
       </div>
     </>
   );
