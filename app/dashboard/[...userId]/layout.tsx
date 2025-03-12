@@ -12,9 +12,9 @@ export default function DashboardLayout({
         <Sidebar />
       </Providers>
       <div className="flex-1 h-screen overflow-hidden">
-        <Providers>
+        {/* <Providers>
           <Header />
-        </Providers>
+        </Providers> */}
         {children}
       </div>
     </div>

@@ -1,5 +1,4 @@
 import prisma from "@/lib/prisma";
-import { ResponseCookies } from "next/dist/compiled/@edge-runtime/cookies";
 import { NextRequest } from "next/server";
 
 export async function GET(req: NextRequest) {

@@ -5,14 +5,15 @@ const DashboarPage = async ({
   searchParams,
 }: {
   params: Promise<{ userId: string }>;
-  searchParams: { project?: string };
+  searchParams: { projectId?: string };
 }) => {
-  const project = (await searchParams).project;
+  const projectId = (await searchParams).projectId;
+  console.log("project id"+projectId)
   const id = (await params).userId;
   return (
     <>
       {/* <Dashboard userId={id} /> */}
-      <Project />
+      <Project projectId={projectId}/>
     </>
   );
 };

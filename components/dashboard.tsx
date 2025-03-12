@@ -43,12 +43,7 @@ const Dashboard = async ({ userId }: { userId: string }) => {
           </div>
           <Drawer session={session} />
         </div>
-        <code className="text-sm">
-          {`<my-widget project-id=1122344></my-widget>`}
-          <br />
-          {`<script src="process.env.WIDGET_URL"}/widget.umd.js"><script>`}
-        </code>
-        {/* Scrollable Content */}
+                {/* Scrollable Content */}
         {projects.length > 0 ? (
           <div className="mt-3 flex-1 overflow-y-auto pb-4">
             <div className="grid grid-cols-4 gap-2">
