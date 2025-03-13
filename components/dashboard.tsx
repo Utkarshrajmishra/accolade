@@ -27,7 +27,7 @@ const Dashboard = async ({ userId }: { userId: string }) => {
 
   return (
     <>
-      <div className="bg-neutral-950 font-inter  w-full p-4  flex flex-col">
+      <div className="bg-white font-inter  w-full p-4  flex flex-col">
         <div>
           <p className="text-neutral-300 text-xl font-semibold">Dashboard</p>
         </div>

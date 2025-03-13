@@ -78,18 +78,17 @@ const Sidebar = () => {
   const filteredProjects = Projects.filter((project) =>
     project.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
-
   return (
-    <div className="w-[280px] font-inter bg-black border-r border-r-zinc-800 flex flex-col h-screen">
+    <div className="w-[280px] font-inter bg-white border-r border-r-zinc-800/30 flex flex-col h-screen">
       {/* Top Section */}
       <div className="flex-none px-4 py-2">
         {/* Workspace Selector */}
-        <Profile/>
+        <Profile />
       </div>
-      <div className="border-t border-neutral-800" />
+      <div className="border-t border-zinc-800/30" />
       <div className="flex-none mt-2 px-4 space-y-6">
         <div>
-          <h2 className="px-2 text-xs font-semibold text-zinc-200 uppercase tracking-wider mb-2">
+          <h2 className="px-2 text-xs font-semibold text-neutral-800 uppercase tracking-wider mb-2">
             Menu
           </h2>
           <nav className="space-y-1">
@@ -100,28 +99,28 @@ const Sidebar = () => {
                 className={cn(
                   "w-full flex items-center gap-2 px-3 py-[6px] rounded-lg text-[0.84rem] transition-all text-zinc-500 duration-200",
                   activeItem === item.id
-                    ? "bg-zinc-800/50 border border-neutral-800 text-white font-medium"
-                    : "text-zinc-400 hover:bg-zinc-800/30 hover:text-zinc-300"
+                    ? "bg-blue-50 border-1 border text-neutral-800 font-medium"
+                    : "text-neutral-600  hover:text-zinc-800"
                 )}
               >
                 {item.icon}
                 <span>{item.name}</span>
                 {item.badge && (
-                  <span className="ml-auto bg-emerald-900 text-white text-xs font-medium p-1 rounded-full"></span>
+                  <span className="ml-auto bg-emerald-400 text-white text-xs font-medium p-1 rounded-full"></span>
                 )}
               </button>
             ))}
           </nav>
         </div>
       </div>
-      <div className="border-t border-neutral-800 mt-2" />
+      <div className="border-t border-zinc-800/30 mt-2" />
       <div className="flex-1 mt-3 px-4 overflow-hidden flex flex-col">
         <div className="flex-none">
           <div className="flex items-center justify-between px-2 mb-2">
-            <h2 className="text-xs font-semibold text-zinc-200 uppercase tracking-wider">
+            <h2 className="text-xs font-semibold text-neutral-800 uppercase tracking-wider">
               Projects
             </h2>
-            <button className="text-zinc-500 hover:text-zinc-300 transition-colors">
+            <button className="text-neutral-600 hover:text-zinc-800 transition-colors">
               <Plus className="size-4" />
             </button>
           </div>
@@ -147,8 +146,8 @@ const Sidebar = () => {
               className={cn(
                 "w-full flex items-center gap-2 px-3 py-[6px] rounded-md text-[0.85rem] transition-all duration-200",
                 activeProject === item.id
-                  ? "bg-zinc-800/50 border border-neutral-800  text-white"
-                  : "text-zinc-500 hover:bg-zinc-800/30 hover:text-zinc-300"
+                  ? "bg-blue-50 border  text-neutral-800"
+                  : "text-neutral-600  hover:text-neutral-800"
               )}
             >
               <BriefcaseBusiness className="size-[18px]" />

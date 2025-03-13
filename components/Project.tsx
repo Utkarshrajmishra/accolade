@@ -23,7 +23,7 @@ const Project = async ({ projectId }: { projectId: string | undefined }) => {
   const feedback = await fetchProject(projectId);
   console.log(feedback);
   return (
-    <div className="bg-neutral-950 font-inter  w-full  flex flex-col p-3">
+    <div className="bg-neutral-950 font-inter  w-full  flex flex-col ">
       <div className="mt-2"></div>
       {feedback && <DataTable feedback={feedback} />}
     </div>

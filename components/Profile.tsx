@@ -19,12 +19,12 @@ const Profile = () => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <section className="w-full bg-zinc-900/30 hover:bg-zinc-800/50 transition-all duration-200 border border-zinc-800/30 rounded-lg p-2.5 flex items-center justify-between group">
+        <section className="w-full bg-zinc-20  rounded text-neutral-800 hover:bg-zinc-800 transition-all duration-200 border border-zinc-800/30 p-2.5 flex items-center justify-between group">
           <div className="flex items-center gap-2">
             {/* <div className="size-5 rounded bg-indigo-600 flex items-center justify-center">
               <span className="text-xs font-medium text-white">U</span>
             </div> */}
-            <span className="text-[0.84rem] text-zinc-300 group-hover:text-white">
+            <span className="text-[0.84rem] text-neutral-800 group-hover:text-white">
               Utkarsh&apos;s Workspace
             </span>
           </div>

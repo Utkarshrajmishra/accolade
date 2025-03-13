@@ -12,8 +12,8 @@ const DashboarPage = async ({
   const id = (await params).userId;
   return (
     <>
-      {/* <Dashboard userId={id} /> */}
-      <Project projectId={projectId}/>
+      <Dashboard userId={id} />
+      {/* <Project projectId={projectId}/> */}
     </>
   );
 };
