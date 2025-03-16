@@ -22,19 +22,40 @@ model Project {
   date     DateTime @default(now())
   userId   String
   user     User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-  feedbacks Feedback[]
+  analytics Analytics[]
+  pageView PageView[]
 }
 
-model Feedback {
-  id        String   @id @default(cuid())
-  email     String   
-  name      String
-  feedback  String
-  date      DateTime @default(now())
+model Analytics {
+  id String @id @default(cuid())
   projectId String
-  rating Int
-  active    Boolean  @default(true)
-  project   Project  @relation(fields: [projectId], references: [id], onDelete: Cascade)
-
+  sessionId String @unique
+  project Project @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  source String @default("Other")
+  country String @default("Uknown")
+  browser String @default("Unknown")
+  device String @default("Unknown")
+  os String @default("Unkown")
+  viewCount Int @default(0)
+  totalTime Int @default(0)
+  firstVisit DateTime @default(now())
+  lastVisit DateTime @default(now())
+  visitedPages String[] @default([])
+  pageView PageView[]
   @@index([projectId])
+  @@index([sessionId])
+}
+
+
+model PageView {
+  id          String    @id @default(cuid())
+  projectId   String
+  project     Project   @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  sessionId   String
+  analytics   Analytics @relation(fields: [sessionId], references: [sessionId], onDelete: Cascade)
+  path        String
+  timestamp   DateTime  @default(now())
+  
+  @@index([projectId])
+  @@index([sessionId])
 }
