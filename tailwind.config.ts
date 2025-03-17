@@ -13,6 +13,10 @@ export default {
 		inter:['Inter', 'sans-serif']
 		},
   		colors: {
+			pink:'#DC3DA8',
+			purple:'#7C26EC',
+			bgColor:'#080708',
+			green:'#20E1A3',
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {
