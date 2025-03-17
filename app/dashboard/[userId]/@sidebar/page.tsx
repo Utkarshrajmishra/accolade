@@ -6,9 +6,9 @@ import { IoDocumentText } from "react-icons/io5";
 import { PiSpeakerSimpleHigh } from "react-icons/pi";
 const Sidebar = () => {
   return (
-    <section className="text-sm text-zinc-500 font-inter h-screen w-[20%] border-r border-1 border-neutral-300 justify-between flex flex-col p-4">
+    <section className="text-sm text-zinc-400 font-inter h-screen w-[20%] border-r border-1 border-neutral-800 justify-between flex flex-col p-4">
       <div className="flex flex-col gap-1">
-        <p className="flex items-center gap-4 text-neutral-800 bg-neutral-200/40 p-2">
+        <p className="flex items-center gap-4 text-zinc-200 bg-neutral-900/40 border border-1 border-neutral-800 rounded p-2">
         <VscDashboard className="size-5"/>
         Dashboard</p>
         <p className="flex gap-4 items-center hover:bg-neutral-200/40 p-2">
